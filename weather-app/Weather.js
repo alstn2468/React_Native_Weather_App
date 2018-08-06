@@ -81,7 +81,8 @@ function Weather({weatherName, temp}) {
 }
 
 Weather.propTypes = {
-    temp: PropTypes.number.isRequired
+    temp: PropTypes.number.isRequired,
+    weatherName: PropTypes.string.isRequired
 };
 
 export default Weather;
