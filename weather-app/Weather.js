@@ -56,6 +56,7 @@ const weatherCases = {
 };
 
 function Weather({weatherName, temp}) {
+    console.log(weatherName);
     return (
         <LinearGradient
             colors = {weatherCases[weatherName].colors}
