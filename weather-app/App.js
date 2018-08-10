@@ -41,7 +41,7 @@ export default class App extends React.Component {
         return (
             <View style={styles.container}>
                 <StatusBar hidden={true}/>
-            { isLoaded ? <Weather weatherName={name} temp={Math.floor(temperature - 273.15)}/> : (
+            { isLoaded ? <Weather weatherName={name} temp={Math.ceil(temperature - 273.15)}/> : (
                 <View style={styles.loading}>
                     <Text style={styles.loadingText}>
                         Getting the Weather

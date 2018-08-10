@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {LinearGradient} from 'expo';
-import {Ionicons} from '@expo/vector-icons';
+import {MaterialCommunityIcons} from '@expo/vector-icons';
 import PropTypes  from 'prop-types';
 
 const weatherCases = {
@@ -9,49 +9,55 @@ const weatherCases = {
         colors: ['#00C6FB', '#005BEA'],
         title: "Rainy",
         subtitle: "Today's weather is Rainy.",
-        icon: 'ios-rainy'
+        icon: 'weather-rainy'
     },
     Clear : {
         colors: ['#FEF253', '#FF7300'],
         title: "Sunny",
         subtitle: "Today's weather is Sunny.",
-        icon: 'ios-sunny'
+        icon: 'weather-sunny'
     },
     Thunderstorm : {
         colors: ['#00ECBC', '#007ADF'],
         title: "Thunderstorm",
         subtitle: "Today's weather is Thunderstorm.",
-        icon: 'ios-thunderstorm'
+        icon: 'weather-ligthning'
     },
     Clouds : {
         colors: ['#D7D2CC', '#304352'],
         title: "Cloud",
         subtitle: "Today's weather is Clouds.",
-        icon: 'ios-cloud'
+        icon: 'weather-cloudy'
     },
     Snow : {
         colors: ['#7DE2FC', '#B9B6E5'],
         title: "Snow",
         subtitle: "Today's weather is Snow.",
-        icon: 'ios-snow'
+        icon: 'weather-snowy'
     },
     Drizzle : {
         colors: ['#89F7FE', '#66A6FF'],
         title: "Drizzle",
         subtitle: "Today's weather is Drizzle.",
-        icon: 'ios-rainy-outline'
+        icon: 'weather-hail'
     },
     Haze : {
         colors: ['#89F7FE', '#66A6FF'],
         title: "Haze",
         subtitle: "Today's weather is Haze.",
-        icon: 'ios-cloud'
+        icon: 'weather-hail'
     },
     Atmosphere : {
         colors: ['#89F7FE', '#66A6FF'],
         title: "Atmosphere",
         subtitle: "Today's weather is Atmosphere.",
-        icon: 'ios-cloud'
+        icon: 'weather-cloudy'
+    },
+    Mist : {
+        colors: ['#D7D2CC', '#304352'],
+        title: "Mist",
+        subtitle: "Today's weather is Mist.",
+        icon: 'weather-fog'
     }
 };
 
@@ -59,22 +65,22 @@ function Weather({weatherName, temp}) {
     console.log(weatherName);
     return (
         <LinearGradient
-            colors = {weatherCases[weatherName].colors}
+            colors = {weatherCases['Clear'].colors}
             style = {styles.container}>
             <View style = {styles.upper}>
-                <Ionicons
+                <MaterialCommunityIcons
                     color='white' size={144}
-                    name={weatherCases[weatherName].icon}/>
+                    name={weatherCases['Clear'].icon}/>
                 <Text style = {styles.temp}>
                     {temp}℃
                 </Text>
             </View>
             <View style = {styles.lower}>
                 <Text style = {styles.title}>
-                    {weatherCases[weatherName].title}
+                    {weatherCases['Clear'].title}
                 </Text>
                 <Text style = {styles.subtitle}>
-                    {weatherCases[weatherName].subtitle}
+                    {weatherCases['Clear'].subtitle}
                 </Text>
             </View>
         </LinearGradient>
